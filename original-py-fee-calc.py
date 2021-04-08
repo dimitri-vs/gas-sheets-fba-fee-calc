@@ -52,11 +52,3 @@ def est_monthly_inventory_storage_fee(size_tier, l, w, h):
             cost_per_cubic_foot = 1.20
     prod_cubic_feet = (l * w * h) / (12*12*12)
     return round(prod_cubic_feet * cost_per_cubic_foot, 3)
-
-def make_no_data_row(headers, sku_row):
-    blank_row = [None] * len(headers)
-    required_row_info = [sku_row['status'], sku_row['item_name'], sku_row['asin'],
-                         sku_row['sku'], sku_row['fulfillment_channel'], sku_row['price']]
-    for i in range(len(required_row_info)):
-        blank_row[i] = required_row_info[i]
-    return blank_row
