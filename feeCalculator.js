@@ -62,7 +62,7 @@ function REFERRALFEEPERCENTAGE(category, price) {
 
 }
 
-function PRODUCTSIZETIER (weight, dimension) {
+function PRODUCTSIZETIER (weight) {
 
   const args = [...arguments];
 
@@ -83,7 +83,7 @@ function PRODUCTSIZETIER (weight, dimension) {
 
 }
 
-function MONTHLYINVENTORYSTORAGEFEE(weight, dimension) {
+function MONTHLYINVENTORYSTORAGEFEE() {
 
     const october = 10;
     const now = new Date();
