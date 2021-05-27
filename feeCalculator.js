@@ -2,6 +2,7 @@
 const CATEGORY_PERCENTAGE_MAP_URL = '';
 
 const CACHE = CacheService.getScriptCache();
+const CACHE_TIMEOUT = 1500; // 25 minutes
 
 function dimensions(dimension) {
     const delim = arguments[1] || 'x';
@@ -57,7 +58,7 @@ const utils = {
     const jsondata = UrlFetchApp.fetch(url);
     const data = JSON.parse(jsondata.getContentText());
 
-    CACHE.put(CACHE_KEY, data, 1500); // cache for 25 minutes
+    CACHE.put(CACHE_KEY, data, CACHE_TIMEOUT); // cache for 25 minutes
 
     return data;
   }
