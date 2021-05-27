@@ -1,3 +1,6 @@
+// PROVIDE DATA PATH HERE
+const CATEGORY_PERCENTAGE_MAP_URL = '';
+
 function dimensions(dimension) {
     const delim = arguments[1] || 'x';
 
@@ -40,15 +43,16 @@ const utils = {
 
     return (values[half - 1] + values[half]) / 2.0;
   },
-  dimensions
+  dimensions,
+  fetchData: (url) => {
+    const jsondata = UrlFetchApp.fetch(url);
+
+    return JSON.parse(jsondata.getContentText());
+  }
 };
 
 // expand this to support more categories
-const categoryPercentageMap = {
-  'grocery': [15, 0.08, 0.15],
-  'health & personal care': [10, 0.08, 0.15],
-  'jewelry': [250, 0.20, 0.05]
-}
+const categoryPercentageMap = utils.fetchData(CATEGORY_PERCENTAGE_MAP_URL);
 
 function REFERRALFEEPERCENTAGE(category, price) {
   

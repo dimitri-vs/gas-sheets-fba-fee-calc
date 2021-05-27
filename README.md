@@ -2,6 +2,13 @@
 
 Calculate Referral and Storage fee for amazon packages/produts
 
+!Important
+Before using the script provide Data URL at the top of script
+
+```
+const CATEGORY_PERCENTAGE_MAP_URL = '<URL>';
+```
+
 ### REFERRAL FEE PERCENTAGE
 
 To calculate referral fee in Google Excel Sheet:
