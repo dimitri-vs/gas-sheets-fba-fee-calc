@@ -53,14 +53,14 @@ const utils = {
 
     const cachedData = CACHE.get(CACHE_KEY);
 
-    if (cachedData) return cachedData;
+    if (cachedData) return JSON.parse(cachedData);
 
     const jsondata = UrlFetchApp.fetch(url);
-    const data = JSON.parse(jsondata.getContentText());
+    const data = jsondata.getContentText();
 
     CACHE.put(CACHE_KEY, data, CACHE_TIMEOUT); // cache for 25 minutes
 
-    return data;
+    return JSON.parse(data);
   }
 };
 
