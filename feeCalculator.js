@@ -85,7 +85,7 @@ function PRODUCTSIZETIER (weight) {
 
 function MONTHLYINVENTORYSTORAGEFEE() {
 
-    const october = 10;
+    const october = 9;
     const now = new Date();
     const month = now.getMonth();
 
