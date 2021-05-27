@@ -3,6 +3,7 @@ const CATEGORY_PERCENTAGE_MAP_URL = '';
 
 const CACHE = CacheService.getScriptCache();
 const CACHE_TIMEOUT = 1500; // 25 minutes
+const CACHE_KEY = 'CACHED_PRICE_MAP';
 
 function dimensions(dimension) {
     const delim = arguments[1] || 'x';
