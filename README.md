@@ -50,7 +50,7 @@ This function tells how much storage fee would you be paying based on package si
 to use this function
 
 ```
-=MONTHLYINVENTORYSTORAGEFEE(<WEIGHT>, <LENGTH>, <WIDTH>, <HEIGHT>)
+=MONTHLYSTORAGEFEE(<WEIGHT>, <LENGTH>, <WIDTH>, <HEIGHT>)
 ```
 
 Weight, Length, Width and Height is refernce to a cell in sheet.
@@ -58,11 +58,11 @@ Weight, Length, Width and Height is refernce to a cell in sheet.
 OR
 
 ```
-=MONTHLYINVENTORYSTORAGEFEE(<WEIGHT>, <DIMENSION>)
+=MONTHLYSTORAGEFEE(<WEIGHT>, <DIMENSION>)
 ```
 
 Dimension is LENGTHxWIDTHxHEIGHT separated by an 'x' if you have dimension with another separator such as a '-' use following:
 
 ```
-=MONTHLYINVENTORYSTORAGEFEE(<WEIGHT>, <DIMENSION>, <DELIM>)
+=MONTHLYSTORAGEFEE(<WEIGHT>, <DIMENSION>, <DELIM>)
 ```
