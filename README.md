@@ -2,7 +2,7 @@
 
 Calculate Referral and Storage fee for amazon packages/produts
 
-!Important
+! Important
 Before using the script provide Data URL at the top of script
 
 ```

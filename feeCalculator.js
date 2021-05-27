@@ -51,7 +51,6 @@ const utils = {
   }
 };
 
-// expand this to support more categories
 const categoryPercentageMap = utils.fetchData(CATEGORY_PERCENTAGE_MAP_URL);
 
 function REFERRALFEEPERCENTAGE(category, price) {
