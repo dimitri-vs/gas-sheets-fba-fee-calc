@@ -45,20 +45,20 @@ const utils = {
 
 // expand this to support more categories
 const categoryPercentageMap = {
-  'grocery': (price) => price <= 15 ? 0.08 : 0.15,
-  'health & personal care': (price) => price <= 10 ? 0.08 : 0.15,
-  'jewelry': (price) => price <= 250 ? 0.20 : 0.05
+  'grocery': [15, 0.08, 0.15],
+  'health & personal care': [10, 0.08, 0.15],
+  'jewelry': [250, 0.20, 0.05]
 }
 
 function REFERRALFEEPERCENTAGE(category, price) {
   
-  if (categoryPercentageMap[category]) {
-    return categoryPercentageMap[category](price);
+  if (!categoryPercentageMap[category]) {
+    return 'Unsupported Category.';
   }
 
-  console.log('Wrong category provided.');
+  const [compareWith, min, max] = categoryPercentageMap[category];
 
-  return null;
+  return price <= compareWith ? min : max;
 
 }
 
