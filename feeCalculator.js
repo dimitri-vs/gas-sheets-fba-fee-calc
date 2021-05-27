@@ -83,7 +83,7 @@ function PRODUCTSIZETIER (weight) {
 
 }
 
-function MONTHLYINVENTORYSTORAGEFEE() {
+function MONTHLYSTORAGEFEE() {
 
     const october = 9;
     const now = new Date();
