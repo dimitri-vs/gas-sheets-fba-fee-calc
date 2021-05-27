@@ -1,6 +1,8 @@
 // PROVIDE DATA PATH HERE
 const CATEGORY_PERCENTAGE_MAP_URL = '';
 
+const CACHE = CacheService.getScriptCache();
+
 function dimensions(dimension) {
     const delim = arguments[1] || 'x';
 
@@ -45,9 +47,19 @@ const utils = {
   },
   dimensions,
   fetchData: (url) => {
-    const jsondata = UrlFetchApp.fetch(url);
 
-    return JSON.parse(jsondata.getContentText());
+    const CACHE_KEY = 'CACHED_PRICE_MAP';
+
+    const cachedData = CACHE.get(CACHE_KEY);
+
+    if (cachedData) return cachedData;
+
+    const jsondata = UrlFetchApp.fetch(url);
+    const data = JSON.parse(jsondata.getContentText());
+
+    CACHE.put(CACHE_KEY, data, 1500); // cache for 25 minutes
+
+    return data;
   }
 };
 
