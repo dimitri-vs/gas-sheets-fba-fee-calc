@@ -1,0 +1,6 @@
+# clasp config and GAS project ID
+.clasp.json
+
+# dotenv environment variables file
+.env
+.env.test
